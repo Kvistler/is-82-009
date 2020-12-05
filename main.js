@@ -1,7 +1,7 @@
 var form = document.forms.cityForm;
 form.search.onclick = function() {
     var requestURL =
-        'http://api.openweathermap.org/data/2.5/weather?q='
+        'https://api.openweathermap.org/data/2.5/weather?q='
         + form.cityName.value
         + '&appid=08b124f880f7e313b535c97460072480';
     var request = new XMLHttpRequest();
