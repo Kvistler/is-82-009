@@ -1,5 +1,13 @@
 var form = document.forms.cityForm;
-form.search.onclick = function() {
+form.search.onclick = sendRequest;
+form.cityName.addEventListener('keydown', function(event) {
+    if (event.keyCode == 13) {
+      sendRequest();
+      event.preventDefault();
+    }
+});
+
+function sendRequest() {
     var requestURL =
         'https://api.openweathermap.org/data/2.5/weather?q='
         + form.cityName.value
